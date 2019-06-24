@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://localhsot:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 server:
   tomcat:
@@ -21,11 +21,21 @@ spring:
     validation-query: SELECT 1
     hikari:
       minimum-idle: 0
- 
+  redis:
+    host: 172.18.8.74
+    port: 16379
+    password: 
+
+  
   http:
     multipart:
       max-file-size: 1000MB
       max-request-size: 1000MB
+  zipkin: 
+    base-url: http://localhost:5001
+redis:
+  cache:
+    expiration: 3601
 ribbon:
   eager-load:
     enabled: true
